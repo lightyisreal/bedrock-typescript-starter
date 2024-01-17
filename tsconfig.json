@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "pretty": true,
+        "lib": [
+            "es2020",
+            "DOM"
+        ],
+        "target": "es2020",
+        "module": "es2020",
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "strict": true,
+        "strictBindCallApply": false,
+        "useUnknownInCatchVariables": false,
+        "noImplicitOverride": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowUnusedLabels": false,
+        "skipLibCheck": true,
+        "alwaysStrict": true,
+        "preserveConstEnums": true,
+        "newLine": "lf",
+        "types": [],
+        "sourceMap": true,
+        "baseUrl": "lib",
+    },
+    "include": [
+        "src",
+        "lib",
+    ],
+    "exclude": [
+        "scripts",
+        "tools",
+        "node_modules"
+    ]
+}

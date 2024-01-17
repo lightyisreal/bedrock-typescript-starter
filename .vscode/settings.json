@@ -1,0 +1,23 @@
+{
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "git.ignoreLimitWarning": true,
+    "editor.formatOnSave": true,
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/build": true,
+        "**/bds": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/build": true,
+        "**/bds": true
+    }
+}

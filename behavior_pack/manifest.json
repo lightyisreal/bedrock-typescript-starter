@@ -1,0 +1,56 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Bedrock TypeScript Starter BP",
+        "description": "A template to get started with Bedrock Add-on Development in TypeScript.",
+        "uuid": "18f93d7f-ac98-45d1-8141-dd24b1551fdb",
+        "version": [
+            1,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            20,
+            50
+        ]
+    },
+    "modules": [
+        {
+            "description": "Script resources",
+            "language": "javascript",
+            "type": "script",
+            "uuid": "8e5c3d28-f9c0-40ab-93b9-fc861782dd95",
+            "version": [
+                1,
+                0,
+                0
+            ],
+            "entry": "scripts/main.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "d7a5044d-936d-4bef-9e28-b7e12325d287",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.8.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "1.2.0-beta"
+        }
+    ],
+    "metadata": {
+        "authors": [
+            "ImLighty"
+        ],
+        "url": "https://github.com/imlighty/bedrock-typescript-starter.git"
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Bedrock TypeScript Starter RP",
+        "description": "A template to get started with Bedrock Add-on Development in TypeScript.",
+        "uuid": "d7a5044d-936d-4bef-9e28-b7e12325d287",
+        "version": [
+            1,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            20,
+            50
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "description": "Resources",
+            "uuid": "e094b536-5dd4-4400-bebf-b657295bb15e",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        }
+    ],
+    "metadata": {
+        "authors": [
+            "ImLighty"
+        ],
+        "url": "https://github.com/imlighty/bedrock-typescript-starter.git"
+    }
+}
