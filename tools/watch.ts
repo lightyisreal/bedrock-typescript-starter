@@ -38,4 +38,5 @@ watcher.on('all', async (event) => {
 });
 
 console.log(`Watching for script and function changes...`);
+exec('npx webpack');
 console.log(`For automatic reloading, run the following command: "/wsserver ws://localhost:8080"`);
