@@ -18,75 +18,99 @@ function getMinecraftPath() {
     return path;
 }
 
-/**
- * @type {import('webpack').Configuration}
- */
-module.exports = {
-    entry: "./src/main.ts",
-    devtool: "source-map",
-    mode: "production",
-    target: ["es2020"],
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: "ts-loader",
-                exclude: /node_modules/,
-            },
-        ],
-    },
-    resolve: {
-        extensions: [".tsx", ".ts", ".js"],
-        plugins: [new TsconfigPathsPlugin()],
-    },
-    plugins: [
-        new CopyWebpackPlugin({
-            patterns: [
+module.exports = (env, argv) => {
+    /**
+    * @type {import('webpack').Configuration}
+    */
+    let config = {
+        entry: "./src/main.ts",
+        mode: "production",
+        target: ["es2020"],
+        module: {
+            rules: [
                 {
-                    from: path.resolve(__dirname, "behavior_pack"),
-                    to: path.join(
-                        getMinecraftPath(),
-                        "development_behavior_packs",
-                        name
-                    ),
-                },
-                {
-                    from: "resource_pack",
-                    to: path.join(
-                        getMinecraftPath(),
-                        "development_resource_packs",
-                        name
-                    ),
+                    test: /\.tsx?$/,
+                    use: "ts-loader",
+                    exclude: /node_modules/,
                 },
             ],
-        }),
-    ],
-    optimization: {
-        minimize: false,
-    },
-    output: {
-        filename: mainFile,
-        path: path.join(
-            getMinecraftPath(),
-            "development_behavior_packs",
-            name,
-            "scripts"
-        ),
-        library: {
-            type: "module",
         },
-    },
-    experiments: {
-        outputModule: true,
-    },
-    externalsType: "module",
-    externals: {
-        "@minecraft/server": "@minecraft/server",
-        "@minecraft/server-ui": "@minecraft/server-ui",
-        "@minecraft/server-net": "@minecraft/server-net",
-        "@minecraft/server-admin": "@minecraft/server-admin",
-        "@minecraft/server-editor": "@minecraft/server-editor",
-        "@minecraft/server-gametest": "@minecraft/server-gametest",
-        "@minecraft/server-editor-bindings": "@minecraft/server-editor-bindings",
-    },
+        resolve: {
+            extensions: [".tsx", ".ts", ".js"],
+            plugins: [new TsconfigPathsPlugin()],
+        },
+        plugins: [
+            new CopyWebpackPlugin({
+                patterns: [
+                    {
+                        from: path.resolve(__dirname, "behavior_pack"),
+                        to: path.join(
+                            getMinecraftPath(),
+                            "development_behavior_packs",
+                            name
+                        ),
+                    },
+                    {
+                        from: "resource_pack",
+                        to: path.join(
+                            getMinecraftPath(),
+                            "development_resource_packs",
+                            name
+                        ),
+                    },
+                ],
+            }),
+        ],
+        optimization: {
+            minimize: true,
+        },
+        output: {
+            filename: mainFile,
+            path: path.join(
+                getMinecraftPath(),
+                "development_behavior_packs",
+                name,
+                "scripts"
+            ),
+            library: {
+                type: "module",
+            },
+        },
+        experiments: {
+            outputModule: true,
+        },
+        externalsType: "module",
+        externals: {
+            "@minecraft/server": "@minecraft/server",
+            "@minecraft/server-ui": "@minecraft/server-ui",
+            "@minecraft/server-net": "@minecraft/server-net",
+            "@minecraft/server-admin": "@minecraft/server-admin",
+            "@minecraft/server-editor": "@minecraft/server-editor",
+            "@minecraft/server-gametest": "@minecraft/server-gametest",
+            "@minecraft/server-editor-bindings": "@minecraft/server-editor-bindings",
+        },
+    };
+
+    if (argv.mode === "development") {
+        config.mode = "development";
+        config.devtool = "source-map";
+        config.optimization.minimize = false;
+        config.module.rules = [
+            {
+                test: /\.tsx?$/,
+                use: [
+                    {
+                        loader: "ts-loader",
+                        options: {
+                            transpileOnly: true,
+                            happyPackMode: true
+                        }
+                    }
+                ],
+                exclude: /node_modules/,
+            },
+        ];
+    }
+
+    return config;
 };
