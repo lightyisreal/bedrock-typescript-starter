@@ -1,13 +1,6 @@
-// Watch for changes in the source files and recompile them automatically.
-
 import { MinecraftServer } from './websocket';
 import webpack from 'webpack';
 import webpackConfig from '../webpack.config';
-
-// Watch for changes in the source files and recompile them automatically.
-// To recompile, run `npm run build` in another terminal.
-
-const toWatch = ['src/**/*.ts', 'lib/**/*.ts', 'lib/**/*.js', 'behavior_pack/functions/**/*.mcfunction'];
 
 const socket = new MinecraftServer(8080);
 

@@ -2,8 +2,7 @@ import * as server from '@minecraft/server';
 import { isEnchanted } from 'utils/enchants';
 
 server.world.afterEvents.worldInitialize.subscribe(() => {
-    server.world.sendMessage(`Hello, if you're reading this, it means that the script compiled successfully!`);
-    console.warn('Hey');
+    server.world.sendMessage(`Hello, world!`);
 });
 
 server.world.beforeEvents.itemUse.subscribe((event) => {
