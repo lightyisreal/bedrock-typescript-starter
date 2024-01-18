@@ -27,7 +27,6 @@
   "devDependencies": {
     "@braintree/uuid": "^1.0.0",
     "@types/ws": "^8.5.10",
-    "chokidar": "^3.5.3",
     "copy-webpack-plugin": "^12.0.2",
     "esrun": "^3.2.26",
     "source-map": "^0.7.4",
