@@ -26,5 +26,5 @@ compiler.watch({}, async (err, stats) => {
     }
 });
 
-console.log(`Watching for script and function changes...`);
+console.log(`Watching for script changes...`);
 console.log(`For automatic reloading, run the following command: "/wsserver ws://localhost:8080"`);

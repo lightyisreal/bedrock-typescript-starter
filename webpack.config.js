@@ -25,6 +25,7 @@ module.exports = (env, argv) => {
     let config = {
         entry: "./src/main.ts",
         mode: "production",
+        devtool: "source-map",
         target: ["es2020"],
         module: {
             rules: [
@@ -93,7 +94,6 @@ module.exports = (env, argv) => {
 
     if (argv.mode === "development") {
         config.mode = "development";
-        config.devtool = "source-map";
         config.optimization.minimize = false;
         config.module.rules = [
             {
