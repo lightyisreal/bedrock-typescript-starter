@@ -46,17 +46,17 @@ module.exports = (env, argv) => {
                     {
                         from: path.resolve(__dirname, "behavior_pack"),
                         to: path.join(
-                            getMinecraftPath(),
-                            "development_behavior_packs",
-                            name
+                            __dirname,
+                            "dist",
+                            "behavior_pack",
                         ),
                     },
                     {
                         from: "resource_pack",
                         to: path.join(
-                            getMinecraftPath(),
-                            "development_resource_packs",
-                            name
+                            __dirname,
+                            "dist",
+                            "resource_pack",
                         ),
                     },
                 ],
@@ -68,9 +68,9 @@ module.exports = (env, argv) => {
         output: {
             filename: mainFile,
             path: path.join(
-                getMinecraftPath(),
-                "development_behavior_packs",
-                name,
+                __dirname,
+                "dist",
+                "behavior_pack",
                 "scripts"
             ),
             library: {
@@ -95,6 +95,40 @@ module.exports = (env, argv) => {
     if (argv.mode === "development") {
         config.mode = "development";
         config.optimization.minimize = false;
+        config.plugins = [
+            new CopyWebpackPlugin({
+                patterns: [
+                    {
+                        from: path.resolve(__dirname, "behavior_pack"),
+                        to: path.join(
+                            getMinecraftPath(),
+                            "development_behavior_packs",
+                            name
+                        ),
+                    },
+                    {
+                        from: "resource_pack",
+                        to: path.join(
+                            getMinecraftPath(),
+                            "development_resource_packs",
+                            name
+                        ),
+                    },
+                ],
+            }),
+        ];
+        config.output = {
+            filename: mainFile,
+            path: path.join(
+                getMinecraftPath(),
+                "development_behavior_packs",
+                name,
+                "scripts"
+            ),
+            library: {
+                type: "module",
+            },
+        };
         config.module.rules = [
             {
                 test: /\.tsx?$/,
