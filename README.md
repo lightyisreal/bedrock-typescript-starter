@@ -1,7 +1,7 @@
 # Minecraft Bedrock Edition TypeScript Add-on Template
 
 This template is provided to help you get started making your own Bedrock Edition add-ons. It's packed with useful features and tools to help you succeed!\
-Are you still a beginner? [Click here](https://github.com/imlighty/bedrock-addon-template) to get the JavaScript template instead.
+Are you still a beginner? [Click here](https://github.com/plymc/bedrock-addon-template) to get the JavaScript template instead.
 
 ## Features
 - **Automatic script reloading** - This is achieved by using a WebSocket you can connect to once the watch server is started.

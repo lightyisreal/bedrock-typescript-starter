@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "run watch server",
+            "label": "Watch for changes in add-on files and rebuild",
             "type": "shell",
             "command": "npm run watch",
             "group": {
@@ -11,7 +11,7 @@
             }
         },
         {
-            "label": "build add-on",
+            "label": "Build add-on",
             "type": "shell",
             "command": "npm run build",
             "group": {

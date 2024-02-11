@@ -10,19 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imlighty/bedrock-typescript-starter.git"
+    "url": "git+https://github.com/plymc/bedrock-typescript-starter.git"
   },
-  "author": "ImLighty",
+  "author": "plymc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imlighty/bedrock-typescript-starter/issues"
+    "url": "https://github.com/plymc/bedrock-typescript-starter/issues"
   },
   "type": "commonjs",
-  "homepage": "https://github.com/imlighty/bedrock-typescript-starter#readme",
+  "homepage": "https://github.com/plymc/bedrock-typescript-starter#readme",
   "dependencies": {
-    "@minecraft/server": "1.8.0-beta.1.20.50-stable",
-    "@minecraft/server-gametest": "1.0.0-beta.1.20.50-stable",
-    "@minecraft/server-ui": "1.2.0-beta.1.20.50-stable"
+    "@minecraft/server": "1.9.0-beta.1.20.60-stable",
+    "@minecraft/server-ui": "1.2.0-beta.1.20.60-stable"
   },
   "devDependencies": {
     "@braintree/uuid": "^1.0.0",
